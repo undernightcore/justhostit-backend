@@ -7,6 +7,7 @@ var logger = require('morgan');
 var contenedoresRouter = require('./routes/contenedores');
 
 var app = express();
+const port = 3000
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -16,5 +17,6 @@ app.use(cors());
 
 app.use('/contenedor', contenedoresRouter);
 
-
-module.exports = app;
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
